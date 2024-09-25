@@ -45,8 +45,6 @@ server.use(passport.authenticate("session"));
 
 server.use(
   cors({
-    origin: "https://66f3d438a8e4342da1ef8477--extraordinary-kataifi-928fa2.netlify.app",
-    credentials: true,
     exposedHeaders: ["X-Total-Count"],
   })
 );
@@ -81,8 +79,8 @@ server.post("/api/create-checkout-session", async(req,res)=>{
     payment_method_types:["card"],
     line_items:lineItems,
     mode:"payment",
-    success_url:"https://66f3d438a8e4342da1ef8477--extraordinary-kataifi-928fa2.netlify.app/order-success/65ef420dd00060856d788dac",
-    cancel_url:"https://66f3d438a8e4342da1ef8477--extraordinary-kataifi-928fa2.netlify.app/payment-failed"
+    success_url:"http://localhost:3000/order-success/65ef420dd00060856d788dac",
+    cancel_url:"http://localhost:3000/payment-failed"
   })
   res.json({id:session.id})
 });
@@ -173,11 +171,9 @@ main().catch((err) => console.log(err));
 
 async function main() {
   await mongoose.connect("mongodb+srv://bhargavvijay:sparbhar@cluster0.pjy1orn.mongodb.net/Ecommerce?retryWrites=true&w=majority&appName=Cluster0", {
-    useNewUrlParser: true,
   });
   console.log("Connected to MongoDB Atlas");
 }
-
 
 server.get("/", (req, res) => {
   res.json({ status: "success" });
