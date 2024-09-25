@@ -45,7 +45,7 @@ server.use(passport.authenticate("session"));
 
 server.use(
   cors({
-    origin: "http://localhost:3000/auth/check",
+    origin: "http://localhost:3000",
     credentials: true,
     exposedHeaders: ["X-Total-Count"],
   })
