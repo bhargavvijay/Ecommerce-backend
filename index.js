@@ -45,7 +45,7 @@ server.use(passport.authenticate("session"));
 
 server.use(
   cors({
-    origin: "https://ecommerce-backend-kyew.onrender.com",
+    origin: "http://localhost:3000/auth/check",
     credentials: true,
     exposedHeaders: ["X-Total-Count"],
   })
