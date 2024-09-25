@@ -45,7 +45,7 @@ server.use(passport.authenticate("session"));
 
 server.use(
   cors({
-    origin: "https://66f3d438a8e4342da1ef8477--extraordinary-kataifi-928fa2.netlify.app",
+    origin: "https://ecommerce-frontend-pdr06swuz-bhargav-vijays-projects.vercel.app/",
     credentials: true,
     exposedHeaders: ["X-Total-Count"],
   })
